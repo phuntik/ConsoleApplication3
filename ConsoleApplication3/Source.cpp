@@ -15,10 +15,12 @@ void main()
 	//cout << endl;
 	for (int sub_counter = 0; sub_counter <= 9; sub_counter++) //заполнение sub_array
 	{
-		for (int temp_counter = 0; temp_counter <= 9; temp_counter++)  // заполнение temp_array
+		for (int temp_counter = m; temp_counter <= 9+m; temp_counter++)  // заполнение temp_array
 		{
-			temp_array[temp_counter] = main_array[temp_counter + m];
+			temp_array[temp_counter] = main_array[temp_counter];
+
 		}
+		m += 10;
 		sort(temp_array, sizeof(temp_array));
 		sub_array[sub_counter] = temp_array[0];
 	}

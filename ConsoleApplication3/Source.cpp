@@ -22,17 +22,17 @@ void sort(int* sort_array, int array_size) // ?????????? ???????
 
 void main()
 {
-	int main_array[100], temp_array[10], sub_array[10], m = 0; //переменные для первого задания
-	int var_for_ex2 = 0; //переменные для второго задания
+	int main_array[100], temp_array[10], sub_array[10], m = 0; //РїРµСЂРµРјРµРЅРЅС‹Рµ РґР»СЏ РїРµСЂРІРѕРіРѕ Р·Р°РґР°РЅРёСЏ
+	int var_for_ex2 = 0; //РїРµСЂРµРјРµРЅРЅС‹Рµ РґР»СЏ РІС‚РѕСЂРѕРіРѕ Р·Р°РґР°РЅРёСЏ
 	int var_for_ex3 = 0, ex3_temp = 0, ex3_counter = 0;
 	srand(time(NULL));
-	for (int input_counter = 0;input_counter <= 99;input_counter++) //заполнение главного массива
+	for (int input_counter = 0;input_counter <= 99;input_counter++) //Р·Р°РїРѕР»РЅРµРЅРёРµ РіР»Р°РІРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 	{
 
 		main_array[input_counter] = rand();
 
 		var_for_ex2 += main_array[input_counter];
-		/* задание 3 */
+		/* Р·Р°РґР°РЅРёРµ 3 */
 		if (var_for_ex3 >= 10) ex3_counter++;
 		if (main_array[input_counter] == ex3_temp + 1) var_for_ex3 += 1;
 		else var_for_ex3 = 0;
@@ -41,9 +41,9 @@ void main()
 		//cout << main_array[input_counter]<<endl;
 	}
 	//cout << endl;
-	for (int sub_counter = 0; sub_counter <= 9; sub_counter++) //заполнение массива минимумов десяток
+	for (int sub_counter = 0; sub_counter <= 9; sub_counter++) //Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° РјРёРЅРёРјСѓРјРѕРІ РґРµСЃСЏС‚РѕРє
 	{
-		for (int temp_counter = 0; temp_counter <= 9; temp_counter++)  // заполнение временного массива для определения минимума десятки
+		for (int temp_counter = 0; temp_counter <= 9; temp_counter++)  // Р·Р°РїРѕР»РЅРµРЅРёРµ РІСЂРµРјРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР° РґР»СЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ РјРёРЅРёРјСѓРјР° РґРµСЃСЏС‚РєРё
 		{
 			temp_array[temp_counter] = main_array[temp_counter + m];
 		}
@@ -53,7 +53,7 @@ void main()
 	}
 	sort(sub_array, 9);
 	cout << "Ex.1: ";
-	for (int output_counter = 0;output_counter <= 9;output_counter++) //вывод минимумов десяток в порядке возрастания
+	for (int output_counter = 0;output_counter <= 9;output_counter++) //РІС‹РІРѕРґ РјРёРЅРёРјСѓРјРѕРІ РґРµСЃСЏС‚РѕРє РІ РїРѕСЂСЏРґРєРµ РІРѕР·СЂР°СЃС‚Р°РЅРёСЏ
 	{
 		cout << sub_array[output_counter] << " ";
 	}

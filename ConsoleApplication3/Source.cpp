@@ -3,9 +3,22 @@
 #include <cstdlib>
 using namespace std;
 
-void sort(int* sort_array, int array_size) // сортировка выборкой
+void sort(int* sort_array, int array_size, bool b) // сортировка выборкой
 {
-	for (int sort_counter = 0; sort_counter <= array_size; sort_counter++)
+	if (b = true) //сортировка для нахождения минимума десятки (один обход)
+	{
+		int temp = sort_array[0]; // буферная переменная
+		for (int i = 1, k = 0; i <= array_size; i++)
+		{
+			if (sort_array[k] > sort_array[i])
+			{
+				temp = sort_array[k];
+				sort_array[k] = sort_array[i];
+				sort_array[i] = temp;
+			}
+		}
+	}
+	for (int sort_counter = 0; sort_counter <= array_size; sort_counter++) // сортировка для всех элементов десятки
 	{
 		int temp = sort_array[0]; // буферная переменная
 		for (int sub_sort_counter = sort_counter + 1; sub_sort_counter <= array_size; sub_sort_counter++)
@@ -25,7 +38,7 @@ void main()
 	int main_array[100], temp_array[10], sub_array[10], m = 0; //переменные для первого задания
 	int var_for_ex2 = 0; //переменные для второго задания
 	int var_for_ex3 = 0, ex3_temp = 0, ex3_counter = 0;
-	srand(time(NULL));
+	//srand(time(NULL));
 	for (int input_counter = 0;input_counter <= 99;input_counter++) //заполнение главного массива
 	{
 
@@ -48,10 +61,10 @@ void main()
 			temp_array[temp_counter] = main_array[temp_counter + m];
 		}
 		m += 10;
-		sort(temp_array, 9);
+		sort(temp_array, 9, true);
 		sub_array[sub_counter] = temp_array[0];
 	}
-	sort(sub_array, 9);
+	sort(sub_array, 9, false);
 	cout << "Ex.1: ";
 	for (int output_counter = 0;output_counter <= 9;output_counter++) //вывод минимумов десяток в порядке возрастания
 	{

@@ -38,7 +38,7 @@ void main()
 	int main_array[100], temp_array[10], sub_array[10], m = 0; //переменные для первого задания
 	int var_for_ex2 = 0; //переменные для второго задания
 	int var_for_ex3 = 0, ex3_temp = 0, ex3_counter = 0;
-	//srand(time(NULL));
+	srand(time(NULL));
 	for (int input_counter = 0;input_counter <= 99;input_counter++) //заполнение главного массива
 	{
 

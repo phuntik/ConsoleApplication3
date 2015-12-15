@@ -5,7 +5,7 @@ using namespace std;
 
 void sort(int* sort_array, int array_size) // сортировка выборкой
 {
-	
+
 	for (int sort_counter = 0; sort_counter <= array_size; sort_counter++) // сортировка для всех элементов десятки
 	{
 		int temp = sort_array[0]; // буферная переменная
@@ -51,7 +51,7 @@ void main()
 			{
 				temp = main_array[j + m + 1];
 			}
-			
+
 		}
 		m += 10;
 
